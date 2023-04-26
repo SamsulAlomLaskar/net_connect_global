@@ -1,15 +1,15 @@
 .navbarr .brand {
-  position: relative;
-  left: -75px;
-  opacity: 0.7;
-  font-size: 1.8em;
+    position: relative;
+    left: -100px;
+    opacity: 0.7;
+    font-size: 1.8em;
 }
 
 .me-auto .btn {
-  position: relative;
-  left: -70px;
+    position: relative;
+    left: -90px;
 }
 
-.me-auto .btn:hover {
-  color: #fff;
+.me-auto .btn:hover{
+    color: #fff;
 }

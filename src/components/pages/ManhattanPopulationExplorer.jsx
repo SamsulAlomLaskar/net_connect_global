@@ -1,21 +1,116 @@
-import React from 'react'
-import '../CSS/ManhattanPopulationExplorer.css'
+import React, { useState } from "react";
+import "../CSS/ManhattanPopulationExplorer.css";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import manhattanData from "../static/manhattanPopulation.json";
+console.log(manhattanData.data[0].title);
 
 const ManhattanPopulationExplorer = () => {
+  const [nextButton, setnextButton] = useState(0);
+  const [prevVal, setprevVal] = useState(false);
+  const [nextVal, setnextVal] = useState(true);
+  
+  const estimatedPopulationStyle = {
+    width:'10px',
+    height:'10px',
+    border:'1px solid #fff',
+    borderBottom:'none',
+    fontSize:'10px',
+    marginLeft:'-2.2em',
+    marginRight:'1em'
+  } 
+
+  const handlePrev = () => {
+    let updateVal = nextButton - 1;
+    setnextButton(updateVal);
+    nextButton == 1 ? setprevVal(false) : setprevVal(true);
+    setnextVal(true);
+  };
+  const handleNext = () => {
+    let updateVal = nextButton + 1;
+    setnextButton(updateVal);
+    console.log(nextButton);
+    nextButton == 8 ? setnextVal(false) : setnextVal(true);
+    setprevVal(true);
+  };
+
   return (
-    <div className='manhattanPopulationExplorer_MainContainer'>
-        <div className="leftStoryContainer">
-       <div> <h6>The Story of Manhattan's Dynamic Population</h6></div>
-        <div className='leftContent'><p>The visualization you see here is a model of the dynamic population of Manhattan, block-by-block and hour-by-hour for a typical week in late Spring. The model is currently fixed to your local time. The population estimates are the result of a combination of US Census data and a geographic dispersion of calculated net inflows and outflows from subway stations, normalized to match population daytime and nighttime estimates provided by a study from NYU Wagner. You may exit the story at any time by selecting the ‘Visualization’ or ‘Statistics’ tabs in the header above. For more information, click ‘About’. To continue, click the arrows below.</p></div>
+    <div className="manhattanPopulationExplorer_MainContainer">
+      <div className="leftStoryContainer">
+        <div>
+          <h6>{manhattanData.data[nextButton].title}</h6>
         </div>
-      <div className='rightContainer'> <div className="rightStoryContainer1">
-       <div><p>Estimated Population (Census Block):</p></div>
+        <div className="leftContent">
+          <p>{manhattanData.data[nextButton].description}</p>
+
+          <div
+            className=" navigateArrow"
+          >
+            {prevVal && (
+              <ArrowBackIosIcon
+                onClick={handlePrev}
+                className="pe-2"
+                type="button"
+              />
+            )}
+            {nextButton + 1} of {manhattanData.data.length}
+            {nextVal && (
+              <ArrowForwardIosIcon
+                onClick={handleNext}
+                className="ps-2"
+                type="button"
+              />
+            )}
+          </div>
+        </div>
+      </div>
+      <div className="rightContainer">
+        {console.log(manhattanData.data[nextButton].visible_districts[0],nextButton)}
+        <div className="rightStoryContainer1">
+          <div>
+            <p> Estimated Population (Census Block):</p>
+            <p><span style={estimatedPopulationStyle}>{"___"}</span>1-100</p>
+            <p><span style={estimatedPopulationStyle}>{"___"}</span> 100-200</p>
+            <p><span style={estimatedPopulationStyle}>{"___"}</span> 200-400</p>
+            <p><span style={estimatedPopulationStyle}>{"___"}</span> 400-800</p>
+            <p><span style={estimatedPopulationStyle}>{"___"}</span> 800-1600</p>
+            <p><span style={estimatedPopulationStyle}>{"___"}</span> 1600-3200</p>
+            <p><span style={estimatedPopulationStyle}>{"___"}</span> 3200-6400</p>
+            <p><span style={estimatedPopulationStyle}>{"___"}</span> 6400-12800</p>
+            <p><span style={estimatedPopulationStyle}>{"___"}</span> more than 12800</p>
+          </div>
         </div>
         <div className="rightStoryContainer2">
-       <div><p>Visible Districts:</p></div>
-        </div></div>
+          <div>
+            <p style={{marginLeft:'-0.1em', marginTop:'-0.3em'}}>Visible Districts:</p>
+           <p>{manhattanData.data[nextButton].visible_districts[0]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} Lower Manhattan</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[1]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} West Village</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[2]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} East Village</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[3]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} Midtown West</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[4]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} Midtown</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[5]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} Midtown East</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[6]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} Upper West Side</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[7]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} Upper East Side</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[8]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} West Harlem</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[9]==="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} Central Harlem</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[10]=="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} East Harlem</p>
+           <p>
+           {manhattanData.data[nextButton].visible_districts[11]=="checked"?<input type="checkbox" checked />:<input type="checkbox"  />} North Manhattan</p>
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ManhattanPopulationExplorer
+export default ManhattanPopulationExplorer;
