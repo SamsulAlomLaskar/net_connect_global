@@ -3,8 +3,8 @@ import "../CSS/ManhattanPopulationExplorer.css";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import manhattanData from "../static/manhattanPopulation.json";
-import HomePageMap from "../chart/HomePageMap";
-import ManhattanMap from "../chart/Manhattan";
+// import HomePageMap from "../chart/HomePageMap";
+// import ManhattanMap from "../chart/Manhattan";
 console.log(manhattanData.data[0].title);
 
 const ManhattanPopulationExplorer = () => {
@@ -65,7 +65,6 @@ const ManhattanPopulationExplorer = () => {
           </div>
         </div>
       </div>
-      {/* <ManhattanMap /> */}
       <div className="rightContainer">
         {console.log(
           manhattanData.data[nextButton].visible_districts[0],
