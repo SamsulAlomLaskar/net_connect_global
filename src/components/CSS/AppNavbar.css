@@ -10,6 +10,12 @@
     left: -90px;
 }
 
-.me-auto .btn:hover{
+.me-auto .btn:hover {
     color: #fff;
+}
+
+.navBtn:hover {
+    color: #fff !important;
+    opacity: 1;
+
 }

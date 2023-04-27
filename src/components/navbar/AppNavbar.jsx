@@ -4,7 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "../CSS/AppNavbar.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 export default function AppNavbar() {
   const navigate = useNavigate();
@@ -24,21 +25,40 @@ export default function AppNavbar() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/story" className="btn">
-                Story
-              </Nav.Link>
-              {/* <Nav.Link href="/visual" className="btn ">
-                Visualization(3d Bar Chart)
-              </Nav.Link> */}
-              <Nav.Link href="/stats" className="btn ">
-                Statistics(Line Chart)
-              </Nav.Link>
-              <Nav.Link href="/data" className="btn ">
-                Data(Horizontal Bar Chart)
-              </Nav.Link>
+              <Button className="navBtn">
+                <Link
+                  style={{ color: "#b1b1b1", textDecoration: "none" }}
+                  to="/visual"
+                >
+                  Visualization(Bar Chart)
+                </Link>
+              </Button>
+              <Button className="navBtn">
+                <Link
+                  style={{ color: "#b1b1b1", textDecoration: "none" }}
+                  to="/stats"
+                >
+                  Statistics(Line Chart)
+                </Link>
+              </Button>
+              <Button className="navBtn">
+                <Link
+                  style={{ color: "#b1b1b1", textDecoration: "none" }}
+                  to="/data"
+                >
+                  Data(Negative Bar Chart)
+                </Link>
+              </Button>
             </Nav>
             <Nav>
-              <Nav.Link href="/about">About</Nav.Link>
+              <Button className="navBtn">
+                <Link
+                  style={{ color: "#b1b1b1", textDecoration: "none" }}
+                  to="/about"
+                >
+                  About
+                </Link>
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
