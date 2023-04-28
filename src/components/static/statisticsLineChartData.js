@@ -10,6 +10,7 @@ const data = [
   { year: "2018", "Sum of Sales (€million)": 2035162, pv: 100, amt: 200 },
   { year: "2019", "Sum of Sales (€million)": 2101839, pv: 100, amt: 200 },
   { year: "2020", "Sum of Sales (€million)": 1895209, pv: 100, amt: 200 },
+  { year: "2021", "Sum of Sales (€million)": 2895209, pv: 100, amt: 200 },
 ];
 export default data;
 // const data = [
