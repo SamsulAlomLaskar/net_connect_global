@@ -12,11 +12,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@visx/geo": "^3.0.0",
-    "@visx/responsive": "^3.0.0",
-    "@visx/scale": "^3.0.0",
-    "@visx/visx": "^3.1.2",
-    "@visx/zoom": "^3.1.1",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.2.1",
     "react": "^18.2.0",
@@ -28,7 +23,12 @@
     "styled-components": "^5.3.10",
     "umbrella": "^0.1.4",
     "victory": "^36.6.8",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@babel/runtime": "^7.8.4",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "d3-geo": "^1.11.9",
+    "react-simple-maps": "2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -57,6 +57,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "typescript": "3.3.3"
   }
 }

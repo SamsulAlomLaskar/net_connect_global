@@ -18,13 +18,18 @@ const StatsLineChart = () => {
         placeContent: "center",
         margin: "5% 50%",
         top: "20%",
-        left:"-10%"
+        left: "-20%",
       }}
       data={lineChartData}
       margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
     >
-      <Line type="monotone" dataKey="Sum of Sales (€million)" strokeWidth={2} stroke="#ED7D31" />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+      <Line
+        type="monotone"
+        dataKey="Sum of Sales (€million)"
+        strokeWidth={2}
+        stroke="#78ADD2"
+      />
+      <CartesianGrid stroke="#0072AA" strokeDasharray="5 5" />
       <XAxis dataKey="year" />
       <YAxis />
       <Tooltip />

@@ -15,8 +15,8 @@ export default function AppNavbar() {
         className="navbarr"
         collapseOnSelect
         expand="lg"
-        bg="dark"
-        variant="dark"
+        // bg="dark"
+        // variant="dark"
       >
         <Container>
           <Navbar.Brand className="brand" href="/home">
@@ -27,7 +27,7 @@ export default function AppNavbar() {
             <Nav className="me-auto">
               <Button className="navBtn">
                 <Link
-                  style={{ color: "#b1b1b1", textDecoration: "none" }}
+                  style={{ color: "#0072AA", textDecoration: "none" }}
                   to="/visual"
                 >
                   Visualization(Bar Chart)
@@ -35,7 +35,7 @@ export default function AppNavbar() {
               </Button>
               <Button className="navBtn">
                 <Link
-                  style={{ color: "#b1b1b1", textDecoration: "none" }}
+                  style={{ color: "#0072AA", textDecoration: "none" }}
                   to="/stats"
                 >
                   Statistics(Line Chart)
@@ -43,7 +43,7 @@ export default function AppNavbar() {
               </Button>
               <Button className="navBtn">
                 <Link
-                  style={{ color: "#b1b1b1", textDecoration: "none" }}
+                  style={{ color: "#0072AA", textDecoration: "none" }}
                   to="/data"
                 >
                   Data(Negative Bar Chart)
@@ -53,7 +53,7 @@ export default function AppNavbar() {
             <Nav>
               <Button className="navBtn">
                 <Link
-                  style={{ color: "#b1b1b1", textDecoration: "none" }}
+                  style={{ color: "#0072AA", textDecoration: "none" }}
                   to="/about"
                 >
                   About
