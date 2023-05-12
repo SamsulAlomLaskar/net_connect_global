@@ -7,8 +7,31 @@ import {
   YAxis,
   Legend,
   Tooltip,
+  LabelList,
 } from "recharts";
 import hrBarChartData from "../static/horizontalBarChartData";
+
+const renderCustomizedLabel = (props) => {
+  const { x, y, width, height, value } = props;
+  const radius = 10;
+
+  return (
+    //  hrBarChartData.map((item, value) => {
+    <g>
+      <circle cx={x + width / 2} cy={y - radius} r={radius} fill="#78ADD2" />
+      <text
+        x={x + width / 2}
+        y={y - radius}
+        fill="#fff"
+        textAnchor="middle"
+        dominantBaseline="middle"
+      >
+        {/* {item["Sum of Market cap (€million)"]} */}H
+      </text>
+    </g>
+    // });
+  );
+};
 
 const HorizontalBarChartData = () => {
   return (
@@ -61,7 +84,10 @@ const HorizontalBarChartData = () => {
           barSize={16}
           stackId="d"
           fill="#21AA47"
-        />
+        >
+          {" "}
+          <LabelList dataKey="name" content={renderCustomizedLabel} />
+        </Bar>
       </BarChart>
     </div>
   );
