@@ -7,6 +7,7 @@ import HorizontalBarChartData from "./chart/HorizontalBarChartData";
 import AboutPage from "./pages/AboutPage";
 import ThreeDChart from "./chart/ThreeDChart";
 import HorizontalBarChartDataNew from "./HorizontalBarChartDataNew";
+import LineGraph from "./chart/LineGraph";
 
 const Router = () => {
   return (
@@ -17,7 +18,7 @@ const Router = () => {
         <Route path="/home" element={<ManhattanPopulationExplorer />} />
         <Route path="/visual" element={<ThreeDChart />} />
         <Route path="/stats" element={<StatsLineChart />} />
-        {/* <Route path="/data" element={<HorizontalBarChartData />} /> */}
+        <Route path="/lineg" element={<LineGraph />} />
         <Route path="/data" element={<HorizontalBarChartDataNew />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>

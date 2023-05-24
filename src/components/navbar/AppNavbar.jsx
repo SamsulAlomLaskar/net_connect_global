@@ -54,6 +54,16 @@ export default function AppNavbar() {
               <Button className="navBtn">
                 <Link
                   style={{ color: "#0072AA", textDecoration: "none" }}
+                  to="/lineg"
+                >
+                  Line Graph
+                </Link>
+              </Button>
+            </Nav>
+            <Nav>
+              <Button className="navBtn">
+                <Link
+                  style={{ color: "#0072AA", textDecoration: "none" }}
                   to="/about"
                 >
                   About
